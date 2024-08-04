@@ -7,7 +7,7 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface BaseService {
-    @GET("")
+    @GET("pushtoken/{token}")
     suspend fun postPushToken(
         @Path("token") token : String,
     ): BaseResponse<Unit>
