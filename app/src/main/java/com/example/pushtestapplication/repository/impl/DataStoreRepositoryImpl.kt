@@ -11,12 +11,7 @@ class DataStoreRepositoryImpl @Inject constructor(
     private val dataStore: DefaultDataStore
 ): DataStoreRepository {
     override suspend fun getToken(): Flow<String?> {
-        return flow {
-            val resultToken = dataStore.getFCMToken().firstOrNull()
-            println("push Token $resultToken")
-
-            emit(resultToken)
-        }
+        return dataStore.getFCMToken()
     }
 
     override suspend fun setToken(token: String) {
