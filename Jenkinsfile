@@ -33,6 +33,7 @@ pipeline{
     stage("Build"){
       steps{
          sh '''
+            echo $JAVA_HOME
             chmod +x gradlew
             ./gradlew assembleDebug
           '''
