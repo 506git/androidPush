@@ -12,9 +12,7 @@ pipeline{
 
    environment {
       JAVA_HOME = tool name: 'jdk8', type: 'jdk'
-      GRADLE_HOME = tool name: 'Gradle 8.3', type: 'gradle'
-      PATH = "${env.JAVA_HOME}/bin:${env.GRADLE_HOME}/bin:${env.PATH}"
-     // PATH = "${env.GRADLE_HOME}/bin:${env.PATH}"
+      PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
   }
 
   stages {
