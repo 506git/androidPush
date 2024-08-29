@@ -18,7 +18,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 internal object NetworkModule {
-    private const val BASE_URL = "https://www.naver.com"
+    private const val BASE_URL = "http://3.37.248.145:8080/"
     private const val TIMEOUT = 30L
 
     @Provides
