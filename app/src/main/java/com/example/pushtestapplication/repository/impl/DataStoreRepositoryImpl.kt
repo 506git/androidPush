@@ -18,4 +18,12 @@ class DataStoreRepositoryImpl @Inject constructor(
         println("push Token $token")
         dataStore.setFCMToken(token)
     }
+
+    override suspend fun getDeviceId(): Flow<String?> {
+        return dataStore.getDeviceId()
+    }
+
+    override suspend fun setDeviceId(token: String) {
+        dataStore.setDeviceId(token)
+    }
 }

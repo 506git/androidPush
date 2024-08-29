@@ -29,6 +29,13 @@ class DefaultDataStore @Inject constructor(
     fun getFCMToken(defaultValue: String = ""): Flow<String> =
         context.datastore.getValueAsFlow(stringPreferencesKey(FCM_TOKEN), defaultValue)
 
+    suspend fun setDeviceId(deviceId: String) {
+        context.datastore.setValue(stringPreferencesKey(DEVICE_ID), deviceId)
+    }
+
+    fun getDeviceId(defaultValue: String = ""): Flow<String> =
+        context.datastore.getValueAsFlow(stringPreferencesKey(DEVICE_ID), defaultValue)
+
     /***
      * handy function to save key-value pairs in Preference. Sets or updates the value in Preference
      * @param key used to identify the preference
@@ -66,6 +73,7 @@ class DefaultDataStore @Inject constructor(
     companion object{
         const val DATA_STORE_TEST = "DATA_STORE_TEST"
         const val FCM_TOKEN = "FCM_TOKEN"
+        const val DEVICE_ID = "DEVICE_ID"
     }
 
 }

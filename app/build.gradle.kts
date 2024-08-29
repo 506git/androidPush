@@ -88,6 +88,8 @@ dependencies {
 
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
+    implementation(libs.converter.scalars) // ScalarsConverterFactory 의존성 추가
+
     implementation(libs.gson)
 
     implementation(libs.okhttp)

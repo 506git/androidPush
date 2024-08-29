@@ -4,5 +4,5 @@ import kotlinx.coroutines.flow.Flow
 
 
 interface NetworkRepository {
-    suspend fun postPushToken(token: String): Flow<Unit>
+    suspend fun postPushToken(token: String, deviceId: String?): Flow<Unit>
 }

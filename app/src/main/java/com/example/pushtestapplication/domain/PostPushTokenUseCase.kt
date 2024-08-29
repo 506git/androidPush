@@ -16,8 +16,10 @@ class PostPushTokenUseCase @Inject constructor(
     suspend operator fun invoke(): Flow<Unit?> {
         return flow {
             val token = dataStoreRepository.getToken().firstOrNull()
+            val deviceId = dataStoreRepository.getDeviceId().firstOrNull()
+
             token?.let {
-                emit(networkRepository.postPushToken(token = token).firstOrNull())
+                emit(networkRepository.postPushToken(token = token, deviceId = deviceId).firstOrNull())
             } ?: println("token not found")
         }.flowOn(Dispatchers.IO)
     }

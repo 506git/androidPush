@@ -5,4 +5,6 @@ import kotlinx.coroutines.flow.Flow
 interface DataStoreRepository {
     suspend fun getToken(): Flow<String?>
     suspend fun setToken(token: String)
+    suspend fun getDeviceId(): Flow<String?>
+    suspend fun setDeviceId(token: String)
 }
